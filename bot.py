@@ -98,9 +98,9 @@ async def check_jobs(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def send_delayed_links(context, chat_id, start_id, count):
     if count == 1:
-        await asyncio.sleep(120)
+        await asyncio.sleep(15)
     elif count == 3:
-        await asyncio.sleep(300)
+        await asyncio.sleep(60)
 
     job_status, next_id = check_job_urls(start_id, count)
     message = "\n".join([f"{url} - {status}" for url, status in job_status])
